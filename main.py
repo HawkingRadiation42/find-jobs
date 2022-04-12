@@ -16,7 +16,8 @@ def find_jobs():
     for index,job in enumerate(jobs):
         published_date = job.find('span', class_='sim-posted').text.replace(' ', '')        
         if 'few' in published_date:
-            company_name = job.find('h3', class_ = 'joblist-comp-name').text.replace(' ', '') # replace is used to represent white spaces to nothing when storing it in company_name
+            company_name = job.find('h3', class_ = 'joblist-comp-name').text.replace(' ', '')
+            # replace is used to represent white spaces to nothing when storing it in company_name
             skills = job.find('span', class_='srp-skills').text.replace(' ','')
             more_info = job.header.h2.a['href']
             if unfamiliar_skills not in skills:
